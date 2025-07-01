@@ -24,12 +24,10 @@ class Value<T extends (string | number), V> {
 export default class Map<T extends (string | number), V> {
     values: (Value<T, V> | undefined)[]
     length: number;
-    capacity: number;
 
-    constructor() {
+    constructor(private capacity: number = 10) {
         this.values = []
         this.length = 0;
-        this.capacity = 10;
     }
 
     get(key: T): V | undefined {
